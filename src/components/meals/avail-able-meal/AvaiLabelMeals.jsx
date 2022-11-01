@@ -23,7 +23,7 @@ const DUMMY_MEALS = [
     price: 22.99,
   },
   {
-    id: "m1",
+    id: "m4",
     name: "Barbecue Burger",
     description: "American , raw , meaty",
     price: 12.99,
@@ -33,6 +33,7 @@ const DUMMY_MEALS = [
 const AvaiLableMeals = () => {
   const newList = DUMMY_MEALS.map((item) => (
     <MealItem
+      id={item.id}
       name={item.name}
       price={item.price}
       decription={item.description}

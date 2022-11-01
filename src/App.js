@@ -1,12 +1,10 @@
 import "./App.css";
-import Header from "./components/layout/header/Header";
-import Meal from "./components/meals/meal/Meal";
+import Content from "./components/content/Content";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Meal/>
+      <Content />
     </div>
   );
 }
