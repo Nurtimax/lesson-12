@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import ChangeColor from "../../../store/ChangeColor";
+import { MealStyle } from "../../menu_color/style/Style";
 import AvaiLableMeals from "../avail-able-meal/AvaiLabelMeals";
 import MealSummery from "../meals-summery/MealSummery";
 
 const Meal = () => {
+
+  const {color, fontColor} = useContext(ChangeColor)
+
   return (
-    <div>
+    <MealStyle isColor={color} isFontColor={fontColor}>
       <MealSummery />
       <AvaiLableMeals/>
-    </div>
+    </MealStyle>
   );
 };
 

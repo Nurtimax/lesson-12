@@ -8,7 +8,7 @@ const Header = () => {
     <>
       <header className={cls.header}>
         <h1>React meals</h1>
-        <HeaderButton/>
+        <HeaderButton />
       </header>
       <div className={cls["main-image"]}>
         <img src={mealImage} alt="mealImage" />
