@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import CartContext from "../../../store/cart-context";
 import ChangeColor from "../../../store/ChangeColor";
 import CartIcon from "../../icons/CartIcon";
 import cls from "./HeaderButton.module.css";
@@ -6,6 +7,11 @@ import cls from "./HeaderButton.module.css";
 const HeaderButton = () => {
 
   const {openModal} = useContext(ChangeColor)
+  const {items} = useContext(CartContext)
+
+  const countOfCartItems = items.reduce((currentNum, item) => {
+    return currentNum + item.totalAmount
+  },0)
 
   return (
     <button className={cls.button} onClick={openModal}>
@@ -13,7 +19,7 @@ const HeaderButton = () => {
         <CartIcon />
       </span>
       <span>Your cart</span>
-      <span className={cls.badge}>3</span>
+      <span className={cls.badge}>{countOfCartItems}</span>
     </button>
   );
 };

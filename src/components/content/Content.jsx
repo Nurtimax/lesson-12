@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CartProvider from "../../store/CartProvider";
 import ChangeColor from "../../store/ChangeColor";
 import Cart from "../cart/Cart";
 import Header from "../layout/header/Header";
@@ -20,12 +21,12 @@ const Content = () => {
   const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
-    setCartIsShown(true)
-  }
+    setCartIsShown(true);
+  };
   const hideCartHandler = () => {
-    setCartIsShown(false)
-  }
-  
+    setCartIsShown(false);
+  };
+
   return (
     <>
       <ChangeColor.Provider
@@ -35,13 +36,15 @@ const Content = () => {
           fontColor: changeFontColorItem,
           changeFontColorFn: changeFontColorItemHandler,
           openModal: showCartHandler,
-          closeModal: hideCartHandler
+          closeModal: hideCartHandler,
         }}
       >
-        {cartIsShown && <Cart />}
-        <Menu />
-        <Header />
-        <Meal />
+        <CartProvider>
+          {cartIsShown && <Cart />}
+          <Menu />
+          <Header />
+          <Meal />
+        </CartProvider>
       </ChangeColor.Provider>
     </>
   );
