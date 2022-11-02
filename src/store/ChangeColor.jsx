@@ -5,7 +5,9 @@ const ChangeColor = createContext({
     color: '',
     changeColorFn: () => {},
     fontColor: '',
-    changeFontColorFn: () => {}
+    changeFontColorFn: () => {},
+    openModal: () => {},
+    closeModal: () => {}
 })
 
 export default ChangeColor

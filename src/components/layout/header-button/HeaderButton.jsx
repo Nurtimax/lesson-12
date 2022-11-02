@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import ChangeColor from "../../../store/ChangeColor";
 import CartIcon from "../../icons/CartIcon";
 import cls from "./HeaderButton.module.css";
 
 const HeaderButton = () => {
+
+  const {openModal} = useContext(ChangeColor)
+
   return (
-    <button className={cls.button}>
+    <button className={cls.button} onClick={openModal}>
       <span className={cls.icon}>
         <CartIcon />
       </span>
