@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lesson-12/static/css/main.7ba56959.css",
+    "main.js": "/lesson-12/static/js/main.2f9df191.js",
+    "static/media/meals.jpg": "/lesson-12/static/media/meals.46a522b40fd53b469b50.jpg",
+    "index.html": "/lesson-12/index.html",
+    "main.7ba56959.css.map": "/lesson-12/static/css/main.7ba56959.css.map",
+    "main.2f9df191.js.map": "/lesson-12/static/js/main.2f9df191.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ba56959.css",
+    "static/js/main.2f9df191.js"
+  ]
+}
