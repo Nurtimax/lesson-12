@@ -17,34 +17,3 @@
   color: #ad5502;
   font-size: 1.25rem;
 }
-.count_item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 23px;
-}
-.count_item button {
-  width: 40px;
-  height: 40px;
-  border: 0.1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  font-size: 23px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: box-shadow .3s;
-}
-.count_item button:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-.total {
-    text-align: left;
-}
-
-.count_item button:first-child:active svg{
-color: greenyellow;
-}
-.count_item button:last-child:active svg{
-color: red;
-}

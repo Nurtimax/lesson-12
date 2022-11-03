@@ -11,19 +11,27 @@ const Menu = () => {
     setOpenMenuModal((prevState) => !prevState);
   };
 
+  const closeMenuModalHandler = () => {
+    setOpenMenuModal((prevState) => !prevState);
+  };
+
   return (
     <MenuStyle>
       {openMenuModal && <MenuModal />}
 
-      <button onClick={openMenuModalHandler}>
+      <div>
         {openMenuModal ? (
           <>
-            <GrClose />
+            <button onClick={openMenuModalHandler}>
+              <GrClose />
+            </button>
           </>
         ) : (
-          <BiMenuAltRight />
+          <button onClick={closeMenuModalHandler}>
+            <BiMenuAltRight />
+          </button>
         )}
-      </button>
+      </div>
     </MenuStyle>
   );
 };

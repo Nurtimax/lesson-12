@@ -1,12 +1,12 @@
-import React from 'react'
-import cls from './Card.module.css'
+import React, { useContext } from "react";
+import ChangeColor from "../../../store/ChangeColor";
+import { CardStyle } from "../../style/Styles";
 
-const Card = ({children}) => {
-  return (
-    <div className={cls.card}>
-      {children}
-    </div>
-  )
-}
+const Card = ({ children }) => {
 
-export default Card
+  const {color} = useContext(ChangeColor)
+
+  return <CardStyle isColor={color}>{children}</CardStyle>;
+};
+
+export default Card;

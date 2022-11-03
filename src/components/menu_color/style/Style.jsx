@@ -32,15 +32,17 @@ const MenuModalStyle = styled.div`
   & {
     width: 300px;
     height: 90vh;
-    background-color: ${({isColor}) => isColor};
-    color: ${({isFontColor}) => isFontColor};
+    background-color: ${({ isColor }) => (isColor ? isColor : "#f5f5f5")};
+    color: ${({ isFontColor, isColor }) =>
+      isFontColor ? isFontColor : isColor === "#161c24" ? "white" : "black"};
     position: fixed;
     z-index: 1;
     right: 10px;
     top: 90px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
       rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    animation: openModal 0.5s ease-in-out 1;
+    animation: openModal
+      0.5s ease-in-out 1;
     border-radius: 5px;
     padding: 20px;
   }
@@ -71,7 +73,7 @@ const MenuModalStyle = styled.div`
     border-radius: 5px;
     box-shadow: rebeccapurple 3px 3px 6px 0px inset,
       rebeccapurple -3px -3px 6px 1px inset;
-    background: linear-gradient(#1a1a20, rebeccapurple);
+    background: linear-gradient(#3a3387, #7475b6);
     color: #16ef8d;
   }
   & .toggleDay .day {
@@ -82,9 +84,9 @@ const MenuModalStyle = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    box-shadow: darkblue 3px 3px 6px 0px inset, aqua -3px -3px 6px 1px inset,
-      aqua -3px -3px 6px 1px inset, aqua -3px -3px 6px 1px inset;
-    background: linear-gradient(darkblue, aqua);
+    box-shadow: darkblue 3px 3px 6px 0px inset, #c9ebff -3px -3px 6px 1px inset,
+      #c9ebff -3px -3px 6px 1px inset, #c9ebff -3px -3px 6px 1px inset;
+    background: linear-gradient(#abb5ff, #c9ebff, #e1f8ff);
     color: yellow;
   }
   & .night svg {
@@ -171,7 +173,8 @@ const MenuModalStyle = styled.div`
     background-color: #1acaff;
   }
   & .color:nth-child(3) .color__item {
-    background: ${(props) => props.isColor ? 'white': '#000'};
+    background: ${({ isColor }) =>
+      isColor === "#161c24" ? "white" : isColor === "white" ? "#000" : "black"};
   }
   & .color:nth-child(4) .color__item {
     background: rebeccapurple;
@@ -183,6 +186,15 @@ const MenuModalStyle = styled.div`
     }
     100% {
       transform: translateX(0);
+    }
+  }
+
+  @keyframes closeModal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(350px);
     }
   }
 `;
