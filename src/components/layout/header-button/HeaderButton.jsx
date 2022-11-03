@@ -10,7 +10,8 @@ const HeaderButton = () => {
   const {items} = useContext(CartContext)
 
   const countOfCartItems = items.reduce((currentNum, item) => {
-    return currentNum + item.totalAmount
+    console.log(item);
+    return currentNum + item.amount
   },0)
 
   return (
